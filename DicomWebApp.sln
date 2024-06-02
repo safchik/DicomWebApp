@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DicomWebApp", "DicomWebApp\DicomWebApp.csproj", "{2133F7F2-0A54-4E74-B721-D69C30499C60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DicomWebApp", "DicomWebApp\DicomWebApp.csproj", "{2133F7F2-0A54-4E74-B721-D69C30499C60}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DicomWebApp.Models", "DicomWebApp.Models\DicomWebApp.Models.csproj", "{6AD47102-5494-46FF-B0B2-1DF66DD2F3EF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DicomWebApp.Web", "DicomWebApp.Web\DicomWebApp.Web.csproj", "{E324E7A0-4F7A-410B-A979-BCF07E5F0B9F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DicomWebApp.Web", "DicomWebApp.Web\DicomWebApp.Web.csproj", "{36247E7B-F3F4-49C8-98AF-898C28805066}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DicomWebApp.Server", "DicomWebApp.Server\DicomWebApp.Server.csproj", "{BA90C59B-6C6A-4450-9AC0-6B70B4DAE843}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dicom.Server", "Dicom.Server\Dicom.Server.csproj", "{BD8F8559-3482-48B7-A887-1238DA64832F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +25,14 @@ Global
 		{6AD47102-5494-46FF-B0B2-1DF66DD2F3EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AD47102-5494-46FF-B0B2-1DF66DD2F3EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AD47102-5494-46FF-B0B2-1DF66DD2F3EF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E324E7A0-4F7A-410B-A979-BCF07E5F0B9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E324E7A0-4F7A-410B-A979-BCF07E5F0B9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E324E7A0-4F7A-410B-A979-BCF07E5F0B9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E324E7A0-4F7A-410B-A979-BCF07E5F0B9F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BA90C59B-6C6A-4450-9AC0-6B70B4DAE843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BA90C59B-6C6A-4450-9AC0-6B70B4DAE843}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BA90C59B-6C6A-4450-9AC0-6B70B4DAE843}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BA90C59B-6C6A-4450-9AC0-6B70B4DAE843}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36247E7B-F3F4-49C8-98AF-898C28805066}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36247E7B-F3F4-49C8-98AF-898C28805066}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36247E7B-F3F4-49C8-98AF-898C28805066}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36247E7B-F3F4-49C8-98AF-898C28805066}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD8F8559-3482-48B7-A887-1238DA64832F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD8F8559-3482-48B7-A887-1238DA64832F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD8F8559-3482-48B7-A887-1238DA64832F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD8F8559-3482-48B7-A887-1238DA64832F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

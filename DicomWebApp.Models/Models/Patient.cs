@@ -1,16 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DicomWebApp.Models.Models
 {
-    internal class Patient
+    public class Patient
     {
-        public int PatientId { get; set; }
-        public string PatientName { get; set;}
-        public DateTime DateOfBirth { get; set; }
+        [Key]
+        public int Id { get; set; }
+
+        [Required]
+        public string PatientID { get; set; }
+
+        public string Name { get; set; }
+
+        public DateTime? BirthDate { get; set; }
+
         public ICollection<Study> Studies { get; set; }
     }
 }
