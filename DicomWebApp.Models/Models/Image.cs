@@ -14,3 +14,4 @@ namespace DicomWebApp.Models.Models
         public Series Series { get; set; }
     }
 }
+ 
