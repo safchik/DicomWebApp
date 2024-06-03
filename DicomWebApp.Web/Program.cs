@@ -1,12 +1,11 @@
 using Microsoft.EntityFrameworkCore;
-using DicomWebApp.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<MyDicomContext>(options =>
+builder.Services.AddDbContext<DbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });

@@ -7,13 +7,11 @@ namespace Dicom.Server;
 public class DicomServerWindowsService : BackgroundService
 {
     private readonly ILogger<DicomServerWindowsService> _logger;
-    private readonly MyDicomContext _dbContext;
     private readonly DicomServer _dicomServer;
 
-    public DicomServerWindowsService(ILogger<DicomServerWindowsService> logger, MyDicomContext dbContext)
+    public DicomServerWindowsService(ILogger<DicomServerWindowsService> logger)
     {
         _logger = logger;
-        _dbContext = dbContext;
         _dicomServer = new DicomServer()
         {
             AllowExtendedNegotiation = true,
@@ -35,6 +33,8 @@ public class DicomServerWindowsService : BackgroundService
 
     public override Task StartAsync(CancellationToken cancellationToken)
     {
+        DicomLicence.ActivateOnLine("TR-2506-8503-3367", string.Empty, string.Empty, out var result);
+
         _dicomServer.Listen(104);
         _dicomServer.ReceivingPixelData += OnPixelDataReceived;
         return base.StartAsync(cancellationToken);
@@ -42,13 +42,6 @@ public class DicomServerWindowsService : BackgroundService
 
     private void OnPixelDataReceived(object sender, ReceivingPixelDataArgs args)
     {
-        var filePath = "SAFDSDFSDF";
-        args.ReceiveToDisk(filePath);
-        _dbContext.Images.Add(new DicomWebApp.Models.Models.Image()
-        {
-            FilePath = filePath,
-
-        });
         throw new NotImplementedException();
     }
 

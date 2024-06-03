@@ -20,5 +20,6 @@ namespace DicomWebApp.Models.Models
         public DateTime? BirthDate { get; set; }
 
         public ICollection<Study> Studies { get; set; }
+        public ICollection<Image> Images { get; set; }
     }
 }
