@@ -64,13 +64,13 @@ namespace DicomWebApp.Web.Data
                         {
                             SOPInstanceUID = "1.2.840.113619.2.3.281.8005.2001.11.14.45.2.17.1",
                             Series = series[0],
-                           
+                            FilePath = "https://i.pinimg.com/564x/f3/af/dd/f3afddae33344bb1ff41653bc86df2f8.jpg"
                         },
                         new Image()
                         {
                             SOPInstanceUID = "1.2.840.113619.2.3.281.8005.2001.11.14.45.2.17.1",
                             Series = series[1],
-                            
+                            FilePath = "https://i.pinimg.com/564x/f3/af/dd/f3afddae33344bb1ff41653bc86df2f8.jpg"
                         }
                     };
 
