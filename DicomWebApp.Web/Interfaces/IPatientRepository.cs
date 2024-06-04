@@ -1,4 +1,4 @@
-﻿using DicomWebApp.Models.Models;
+﻿using DicomWebApp.Web.Models;
 
 namespace DicomWebApp.Web.Interfaces
 {

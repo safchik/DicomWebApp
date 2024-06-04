@@ -1,7 +1,8 @@
-﻿using DicomWebApp.Models.Data;
-using DicomWebApp.Models.Models;
+﻿
+using DicomWebApp.Web.Models;
 using DicomWebApp.Web.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using DicomWebApp.Web.Data;
 
 namespace DicomWebApp.Web.Repository
 {

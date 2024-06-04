@@ -1,4 +1,5 @@
-using DicomWebApp.Models.Data;
+
+using DicomWebApp.Web.Data;
 using DicomWebApp.Web.Interfaces;
 using DicomWebApp.Web.Repository;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +16,11 @@ builder.Services.AddDbContext<MyDicomContext>(options =>
 });
 
 var app = builder.Build();
+
+if (args.Length == 1 && args[0].ToLower() == "seeddata")
+{
+    Seed.SeedData(app);
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

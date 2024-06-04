@@ -1,15 +1,15 @@
-﻿using DicomWebApp.Models.Data;
-using DicomWebApp.Models.Models;
+﻿
+using DicomWebApp.Web.Models;
 using DicomWebApp.Web.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+
 
 namespace DicomWebApp.Web.Controllers
 {
-    public class PatientsController : Controller
+    public class PatientController : Controller
     {
         private readonly IPatientRepository _patientRepository;
-        public PatientsController(MyDicomContext context, IPatientRepository patientRepository)
+        public PatientController(IPatientRepository patientRepository)
         {
             _patientRepository = patientRepository;
         }
