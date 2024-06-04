@@ -1,10 +1,13 @@
 using DicomWebApp.Models.Data;
+using DicomWebApp.Web.Interfaces;
+using DicomWebApp.Web.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IPatientRepository, PatientRepository>();
 
 builder.Services.AddDbContext<MyDicomContext>(options =>
 {
