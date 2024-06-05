@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DicomWebApp.Web.Migrations
 {
     [DbContext(typeof(MyDicomContext))]
-    [Migration("20240604145502_InitialCreate")]
+    [Migration("20240605094807_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -64,8 +64,8 @@ namespace DicomWebApp.Web.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime?>("BirthDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("BirthDate")
+                        .HasColumnType("date");
 
                     b.Property<string>("Name")
                         .IsRequired()

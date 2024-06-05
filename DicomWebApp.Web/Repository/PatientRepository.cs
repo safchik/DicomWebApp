@@ -27,12 +27,20 @@ namespace DicomWebApp.Web.Repository
 
         public async Task<IEnumerable<Patient>> GetAllPatients()
         {
-            return await _context.Patients.ToListAsync();
+            return await _context.Patients
+                .Include(p => p.Studies)
+                    .ThenInclude(s => s.Series)
+                        .ThenInclude(se => se.Images)
+                .ToListAsync();
         }
 
         public async Task<Patient> GetPatientById(int id)
         {
-            return await _context.Patients.FirstOrDefaultAsync(p => p.Id == id);
+            return await _context.Patients
+                .Include(p => p.Studies)
+                    .ThenInclude(s => s.Series)
+                        .ThenInclude(se => se.Images)
+                .FirstOrDefaultAsync(p => p.Id == id);
         }
 
         public bool Save()

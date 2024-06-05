@@ -1,66 +1,99 @@
-﻿@model Patient
-<!-- Page Content -->
-<div class="container">
+﻿@model DicomWebApp.Web.Models.Patient
 
-    <!-- Portfolio Item Heading -->
-    <h1 class="my-4">
-        Page Heading
-        <small>Secondary Text</small>
-    </h1>
+@{
+    ViewData["Title"] = "Patient Details";
+}
 
-    <!-- Portfolio Item Row -->
-    <div class="row">
+<h1>Patient Details</h1>
 
-        <div class="col-md-8">
-            <img class="img-fluid" src="@Model.Images" alt="">
-        </div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Patient ID</th>
+            <th>Patient Name</th>
+            <th>Birth Date</th>
+            <th>Studies</th>
+            <th>Series</th>
+            <th>Images</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.PatientID</td>
+            <td>@Model.Name</td>
+            <td>@Model.BirthDate.ToString("yyyy-MM-dd")</td>
+            <td>
+                @if (Model.Studies != null && Model.Studies.Any())
+                {
+                    <ul>
+                        @foreach (var study in Model.Studies)
+                        {
+                            <li>@study.StudyInstanceUID</li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <p>No studies found.</p>
+                }
+            </td>
+            <td>
+                @if (Model.Studies != null && Model.Studies.Any())
+                {
+                    <ul>
+                        @foreach (var study in Model.Studies)
+                        {
+                            if (study.Series != null && study.Series.Any())
+                            {
+                                @foreach (var series in study.Series)
+                                {
+                                    <li>@series.SeriesInstanceUID</li>
+                                }
+                            }
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <p>No series found.</p>
+                }
+            </td>
+            <td>
+                @if (Model.Studies != null && Model.Studies.Any())
+                {
+                    <ul>
+                        @foreach (var study in Model.Studies)
+                        {
+                            if (study.Series != null && study.Series.Any())
+                            {
+                                @foreach (var series in study.Series)
+                                {
+                                    if (series.Images != null && series.Images.Any())
+                                    {
+                                        @foreach (var image in series.Images)
+                                        {
+                                            <ul>
+                                                
+                                                <img src="@image.FilePath" alt="Image" width="100" />
+                                            </ul>
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <p>No images found.</p>
+                }
+            </td>
+        </tr>
+    </tbody>
+</table>
 
-        <div class="col-md-4">
-            <h3 class="my-3">@Model.Name</h3>
-            
-            
-            <ul>
-                <li>@Model.PatientID</li>
-                <li>@Model.BirthDate</li>
-                <li>@Model.Images</li>
-                <li>@Model.Studies</li>
-               
-            </ul>
-        </div>
-
+<div class="d-flex justify-content-between align-items-center">
+    <div class="btn-group">
+        <a type="button" asp-controller="Patient" asp-action="Index" class="btn btn-sm btn-outline-secondary">Back to List</a>
     </div>
-    <!-- /.row -->
-    <!-- Related Projects Row -->
-    <h3 class="my-4">Patient details</h3>
-
-    <div class="row">
-
-        <div class="col-md-3 col-sm-6 mb-4">
-            <a href="#">
-                <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
-            </a>
-        </div>
-
-        <div class="col-md-3 col-sm-6 mb-4">
-            <a href="#">
-                <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
-            </a>
-        </div>
-
-        <div class="col-md-3 col-sm-6 mb-4">
-            <a href="#">
-                <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
-            </a>
-        </div>
-
-        <div class="col-md-3 col-sm-6 mb-4">
-            <a href="#">
-                <img class="img-fluid" src="https://via.placeholder.com/500x300" alt="">
-            </a>
-        </div>
-
-    </div>
-    <!-- /.row -->
-
 </div>
-<!-- /.container -->

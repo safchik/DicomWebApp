@@ -20,13 +20,19 @@ namespace DicomWebApp.Web.Data
                         {
                             PatientID = "1",
                             Name = "John Doe",
-                            BirthDate = new DateTime(1980, 1, 1)
+                            BirthDate = new DateOnly(1980, 1, 1)
                         },
                         new Patient()
                         {
                             PatientID = "2",
                             Name = "Jane Smith",
-                            BirthDate = new DateTime(1990, 2, 2)
+                            BirthDate = new DateOnly(1990, 2, 2)
+                        },
+                        new Patient()
+                        {
+                            PatientID = "3",
+                            Name = "Robert Brown",
+                            BirthDate = new DateOnly(1975, 3, 3)
                         }
                     };
 
@@ -39,8 +45,13 @@ namespace DicomWebApp.Web.Data
                         },
                         new Study()
                         {
-                            StudyInstanceUID = "1.2.840.113619.2.3.281.8005.2001.11.14.45",
+                            StudyInstanceUID = "1.2.840.113619.2.3.281.8005.2001.11.14.46",
                             Patient = patients[1]
+                        },
+                        new Study()
+                        {
+                            StudyInstanceUID = "1.2.840.113619.2.3.281.8005.2001.11.14.47",
+                            Patient = patients[2]
                         }
                     };
 
@@ -53,8 +64,18 @@ namespace DicomWebApp.Web.Data
                         },
                         new Series()
                         {
-                            SeriesInstanceUID = "1.2.840.113619.2.3.281.8005.2001.11.14.45.2",
+                            SeriesInstanceUID = "1.2.840.113619.2.3.281.8005.2001.11.14.46.2",
                             Study = studies[1]
+                        },
+                        new Series()
+                        {
+                            SeriesInstanceUID = "1.2.840.113619.2.3.281.8005.2001.11.14.47.2",
+                            Study = studies[2]
+                        },
+                        new Series()
+                        {
+                            SeriesInstanceUID = "1.2.840.113619.2.3.281.8005.2001.11.14.47.3",
+                            Study = studies[2]
                         }
                     };
 
@@ -68,8 +89,20 @@ namespace DicomWebApp.Web.Data
                         },
                         new Image()
                         {
-                            SOPInstanceUID = "1.2.840.113619.2.3.281.8005.2001.11.14.45.2.17.1",
+                            SOPInstanceUID = "1.2.840.113619.2.3.281.8005.2001.11.14.46.2.17.1",
                             Series = series[1],
+                            FilePath = "https://i.pinimg.com/564x/f3/af/dd/f3afddae33344bb1ff41653bc86df2f8.jpg"
+                        },
+                        new Image()
+                        {
+                            SOPInstanceUID = "1.2.840.113619.2.3.281.8005.2001.11.14.47.2.17.1",
+                            Series = series[2],
+                            FilePath = "https://i.pinimg.com/564x/f3/af/dd/f3afddae33344bb1ff41653bc86df2f8.jpg"
+                        },
+                        new Image()
+                        {
+                            SOPInstanceUID = "1.2.840.113619.2.3.281.8005.2001.11.14.47.3.17.1",
+                            Series = series[3],
                             FilePath = "https://i.pinimg.com/564x/f3/af/dd/f3afddae33344bb1ff41653bc86df2f8.jpg"
                         }
                     };

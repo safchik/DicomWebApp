@@ -19,7 +19,7 @@ namespace DicomWebApp.Web.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     PatientID = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    BirthDate = table.Column<DateOnly>(type: "date", nullable: false)
                 },
                 constraints: table =>
                 {
